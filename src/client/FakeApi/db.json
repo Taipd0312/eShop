@@ -1,0 +1,98 @@
+{
+    "products": [
+      {
+        "id": "c71d56e7-eba0-48d5-bbcc-aea7f82209a5",
+        "name": "Diann Padilla",
+        "typeId": "2adb2b81-0887-4448-b30f-e161e915a5c2",
+        "cost": 30904,
+        "colorId": "d855007b-5424-421a-b842-29e9b32eeaf5",
+        "description": "Enim tempor culpa enim nostrud enim tempor ex. Ex fugiat veniam elit qui exercitation. Cupidatat est magna aliqua ad laboris occaecat tempor.\r\n",
+        "images": [
+          "laboris",
+          "elit",
+          "commodo"
+        ],
+        "sell": 38796,
+        "version": 4,
+        "total": 38
+      },
+      {
+        "id": "1e11bb03-b085-4c8a-bfda-10e2be6a6e22",
+        "name": "Ayala Rutledge",
+        "typeId": "95d85d3c-5ddd-46a6-aff0-a95b6be4663e",
+        "cost": 38642,
+        "colorId": "20d8892e-7cbb-434c-bd72-d479fd075a00",
+        "description": "Aute ex elit pariatur ex. Mollit laboris mollit exercitation deserunt laboris ea pariatur anim ea dolor sit. Nostrud incididunt reprehenderit ad cupidatat nisi non nulla ullamco nostrud quis dolore quis ex. Tempor veniam velit officia reprehenderit eiusmod quis sunt irure consequat. Pariatur nostrud sit sint dolore culpa sit.\r\n",
+        "images": [
+          "nulla",
+          "labore",
+          "exercitation"
+        ],
+        "sell": 32035,
+        "version": 6,
+        "total": 30
+      },
+      {
+        "id": "e534188f-983a-402b-b546-d9b140b43c64",
+        "name": "Schneider Branch",
+        "typeId": "5d99be9a-a32d-4773-9eba-6129e41aad59",
+        "cost": 39500,
+        "colorId": "6ed6a98b-eb53-4772-b153-7e4ad7f282e0",
+        "description": "Qui ea sit in ea deserunt. In incididunt duis cillum mollit aliqua irure commodo duis nisi quis ut. Exercitation adipisicing do occaecat excepteur tempor eiusmod consequat id pariatur tempor exercitation. Voluptate tempor voluptate est fugiat consequat.\r\n",
+        "images": [
+          "in",
+          "nisi",
+          "nulla"
+        ],
+        "sell": 28930,
+        "version": 1,
+        "total": 25
+      },
+      {
+        "id": "9276db15-9ef0-4888-9ed6-caa661754e12",
+        "name": "Farley Vargas",
+        "typeId": "b96e365a-4ce0-4351-b8ca-9e2225a367ee",
+        "cost": 38194,
+        "colorId": "494a3574-9166-4181-8904-e591f9f71281",
+        "description": "Consectetur irure nulla nisi labore excepteur Lorem occaecat et proident. Ad occaecat sint incididunt sit sit officia esse quis cupidatat qui excepteur. Sit non nisi irure veniam occaecat officia non deserunt et eu. Cillum occaecat fugiat do qui nisi consectetur sunt cillum fugiat. Aute anim nulla nostrud labore ex anim eu aute magna consequat occaecat et dolor eiusmod. Quis nulla cupidatat occaecat excepteur labore consequat esse labore Lorem officia fugiat. Anim Lorem nulla ex ea eiusmod voluptate sit veniam id.\r\n",
+        "images": [
+          "eu",
+          "sunt",
+          "ut"
+        ],
+        "sell": 37765,
+        "version": 2,
+        "total": 22
+      },
+      {
+        "id": "459573f7-f9d5-40b5-b2e8-041baa5547db",
+        "name": "Vera Acevedo",
+        "typeId": "8f6ecf4e-368b-461e-88e5-002d81e363e9",
+        "cost": 26052,
+        "colorId": "40007c41-effe-4790-8798-2ffbf54f264f",
+        "description": "Minim amet sit magna ut. Sint duis enim adipisicing aute. Anim ea irure et dolor commodo id irure dolore et proident. Aliquip aute cillum dolor aliqua ad irure mollit ipsum sunt cillum dolore.\r\n",
+        "images": [
+          "eu",
+          "proident",
+          "ex"
+        ],
+        "sell": 38241,
+        "version": 4,
+        "total": 24
+      }
+    ],
+    "productType": [
+      {
+        "id": "af09805d-c3a9-4567-b9d1-1a9dd7c080fb",
+        "name": "Malone Mcfarland",
+        "unit": "Reprehenderit quis aute laborum cillum do sint dolor aliquip minim excepteur cillum minim aliqua anim. Dolore ea ex dolor proident aute duis do id incididunt mollit. Voluptate id sit et do incididunt proident deserunt est laborum minim minim. Quis adipisicing occaecat est commodo aliqua exercitation labore dolor velit fugiat eu dolor magna cupidatat. Ut quis irure culpa pariatur ipsum esse id commodo proident sint ut pariatur adipisicing.\r\n",
+        "version": 2
+      },
+      {
+        "id": "46d09699-e5ea-4b7e-a5b4-9181585ae6f5",
+        "name": "Booth Casey",
+        "unit": "Tempor minim ex ad esse fugiat fugiat cillum minim laboris cillum. Officia id tempor adipisicing adipisicing ad sunt. Velit ut quis labore sit quis aliquip exercitation in incididunt commodo dolore consectetur. Velit officia velit dolore duis minim in cillum proident laborum aliqua dolor.\r\n",
+        "version": 9
+      }
+    ]
+}

@@ -1,0 +1,17 @@
+E:\Github repos\Micorservices\eShop\src\Mask.Application\bin\Debug\net6.0\Mask.Application.deps.json
+E:\Github repos\Micorservices\eShop\src\Mask.Application\bin\Debug\net6.0\Mask.Application.dll
+E:\Github repos\Micorservices\eShop\src\Mask.Application\bin\Debug\net6.0\Mask.Application.pdb
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\Mask.Application.csproj.AssemblyReference.cache
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\Mask.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\Mask.Application.AssemblyInfoInputs.cache
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\Mask.Application.AssemblyInfo.cs
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\Mask.Application.csproj.CoreCompileInputs.cache
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\Mask.Application.dll
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\refint\Mask.Application.dll
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\Mask.Application.pdb
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\ref\Mask.Application.dll
+E:\Github repos\Micorservices\eShop\src\Mask.Application\bin\Debug\net6.0\Mask.Domain.dll
+E:\Github repos\Micorservices\eShop\src\Mask.Application\bin\Debug\net6.0\Mask.Infrastructure.dll
+E:\Github repos\Micorservices\eShop\src\Mask.Application\bin\Debug\net6.0\Mask.Infrastructure.pdb
+E:\Github repos\Micorservices\eShop\src\Mask.Application\bin\Debug\net6.0\Mask.Domain.pdb
+E:\Github repos\Micorservices\eShop\src\Mask.Application\obj\Debug\net6.0\Mask.Application.csproj.CopyComplete

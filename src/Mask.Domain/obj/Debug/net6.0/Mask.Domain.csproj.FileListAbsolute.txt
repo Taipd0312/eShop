@@ -1,0 +1,12 @@
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\bin\Debug\net6.0\Mask.Domain.deps.json
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\bin\Debug\net6.0\Mask.Domain.dll
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\bin\Debug\net6.0\Mask.Domain.pdb
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\obj\Debug\net6.0\Mask.Domain.csproj.AssemblyReference.cache
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\obj\Debug\net6.0\Mask.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\obj\Debug\net6.0\Mask.Domain.AssemblyInfoInputs.cache
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\obj\Debug\net6.0\Mask.Domain.AssemblyInfo.cs
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\obj\Debug\net6.0\Mask.Domain.csproj.CoreCompileInputs.cache
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\obj\Debug\net6.0\Mask.Domain.dll
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\obj\Debug\net6.0\refint\Mask.Domain.dll
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\obj\Debug\net6.0\Mask.Domain.pdb
+E:\Github repos\Micorservices\eShop\src\Mask.Domain\obj\Debug\net6.0\ref\Mask.Domain.dll
