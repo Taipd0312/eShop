@@ -7,11 +7,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F4743989-6A0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mask.api", "src\mask.api\Mask.api.csproj", "{00499249-6266-4F81-8B1A-38D76B5E2E0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mask.Domain", "src\Mask.Domain\Mask.Domain.csproj", "{0FBA9F95-67B0-40AE-B8A8-C566AC527483}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mask.Domain", "src\Mask.Domain\Mask.Domain.csproj", "{0FBA9F95-67B0-40AE-B8A8-C566AC527483}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mask.Application", "src\Mask.Application\Mask.Application.csproj", "{CC0B3863-9D1D-4664-B17D-B28EACF9F5E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mask.Application", "src\Mask.Application\Mask.Application.csproj", "{CC0B3863-9D1D-4664-B17D-B28EACF9F5E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mask.Infrastructure", "src\Mask.Infrastructure\Mask.Infrastructure.csproj", "{B3E3F1BF-8856-43ED-B902-9300B010F788}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mask.Infrastructure", "src\Mask.Infrastructure\Mask.Infrastructure.csproj", "{B3E3F1BF-8856-43ED-B902-9300B010F788}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A3315BB-05E9-4D69-85F7-382EFA85129F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

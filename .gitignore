@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/mask.api/Mask.api/bin
+/src/mask.api/Mask.api/obj
+bin/
+obj/
+Debug/
+Release/

@@ -1,4 +1,4 @@
-using Mask.Application.Commands;
+using Mask.Application.Commands.ProductTypes;
 using Mask.Domain.Entities;
 using Mask.Domain.Interfaces;
 using Mask.Service.Controllers;

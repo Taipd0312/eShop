@@ -1,13 +1,7 @@
 ﻿using Mask.Application.Caching;
-using Mask.Application.CQRSs;
 using Mask.Domain.Entities;
 using Mask.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mask.Application.Queries.Products
 {

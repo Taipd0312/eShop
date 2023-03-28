@@ -1,16 +1,11 @@
 using Customer.Infrastructure.Repositories;
-using FluentValidation;
-using FluentValidation.AspNetCore;
+using Mask.api.Exceptions;
 using Mask.Application;
 using Mask.Application.Behaviors;
-using Mask.Application.Commands;
-using Mask.Application.Interfaces;
-using Mask.Application.Services;
 using Mask.Domain.Interfaces;
 using Mask.Infrastructure.DbContexts;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +21,11 @@ builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBeh
 // Add Modules
 builder.Services.RegisterApplicationModule(builder.Configuration);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(config =>
+{
+    config.Filters.Add<MaskExceptionHandler>();
+    config.RespectBrowserAcceptHeader = true;
+});
 builder.Services.AddTransient(typeof(IGenericRepository<,,>), typeof(GenericRepository<,,>));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

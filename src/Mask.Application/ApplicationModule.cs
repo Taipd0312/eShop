@@ -1,7 +1,8 @@
 ﻿using FluentValidation;
 using Mask.Application.Caching;
-using Mask.Application.Interfaces;
-using Mask.Application.Services;
+using Mask.Application.Interfaces.ProductTypes;
+using Mask.Application.Services.ProductTypes;
+using Mask.Application.UnitOfWorks;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ namespace Mask.Application
 
             // Add services
             services.AddScoped<IProductTypeService, ProductTypeService>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             // Add Caching
             services.AddDistributedMemoryCache();
