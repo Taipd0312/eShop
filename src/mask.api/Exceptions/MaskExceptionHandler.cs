@@ -1,4 +1,5 @@
-﻿using Mask.Application.Exceptions;
+﻿using FluentValidation;
+using Mask.Application.Infrastrucetures;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -28,33 +29,50 @@ namespace Mask.api.Exceptions
 
                 int statusCode;
                 string content = string.Empty;
+                MaskExceptionResponse appApiResult = new MaskExceptionResponse()
+                {
+                    StackTrace = _hostEnvironment.IsDevelopment() ? exception.StackTrace! : null
+                };
 
                 switch (true)
                 {
                     case bool _ when exception is SqlException:
                         statusCode = (int)HttpStatusCode.InternalServerError;
+                        appApiResult.Action = MaskActionResponse.Exception;
                         content = "Something went wrong with our connection. Pleases try again later.";
                         break;
 
                     case bool _ when exception is InvalidOperationException:
                         statusCode = (int)HttpStatusCode.InternalServerError;
+                        appApiResult.Action = MaskActionResponse.Exception;
                         content = "Something went wrong while processing your request. Pleases try again later.";
+                        break;
+
+                    case bool _ when exception is ValidationException:
+                        statusCode = (int)HttpStatusCode.BadRequest;
+                        var validatorException = (MaskValidatorResponse)exception;
+                        appApiResult.Errors = validatorException.Errors;
+                        appApiResult.StackTrace = null;
+                        appApiResult.Action = MaskActionResponse.Validator;
+                        break;
+
+                    case bool _ when exception is ApplicationException:
+                        statusCode = (int)HttpStatusCode.BadRequest;
+                        appApiResult.Action = MaskActionResponse.BusinessValidattor;
+                        content = exception.Message;
                         break;
 
                     default:
                         statusCode = (int)HttpStatusCode.InternalServerError;
+                        appApiResult.Action = MaskActionResponse.Exception;
                         content = "Something went wrong while processing your request. Pleases try again later.";
                         break;
                 }
 
                 _logger.LogError($"GlobalExceptionFilter: Error in {context.ActionDescriptor.DisplayName}. {exception.Message}. {exception.StackTrace}");
 
-                MaskExceptionResponse appApiResult = new MaskExceptionResponse()
-                {
-                    Code = (int)HttpStatusCode.InternalServerError,
-                    Message = exception.Message,
-                    StackTrace = _hostEnvironment.IsDevelopment() ? exception.StackTrace! : null
-                };
+                appApiResult.Code = statusCode;
+                appApiResult.Message = content;
 
                 var result = new ObjectResult(appApiResult)
                 {

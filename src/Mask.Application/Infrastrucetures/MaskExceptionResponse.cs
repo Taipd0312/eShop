@@ -1,4 +1,4 @@
-﻿namespace Mask.Application.Exceptions
+﻿namespace Mask.Application.Infrastrucetures
 {
     public class MaskExceptionResponse
     {
@@ -15,8 +15,12 @@
 
         public int Code { get; set; }
 
+        public MaskActionResponse Action { get; set; }
+
         public string Message { get; set; } = string.Empty;
 
         public string? StackTrace { get; set; } = string.Empty;
+
+        public object? Errors { get; set; }
     }
 }
