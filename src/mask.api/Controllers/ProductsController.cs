@@ -1,3 +1,4 @@
+using Mask.Application.Interfaces;
 using Mask.Application.Queries.Products;
 using Mask.Domain.Entities;
 using Mask.Domain.Interfaces;
@@ -13,8 +14,9 @@ public class ProductsController : BaseController<Product, Guid, string>
 
     public ProductsController(
         IGenericRepository<Product, Guid, string> genericRepository, 
+        IMaskService<Product, Guid, string> maskService, 
         IMediator mediator, 
-        ILogger<ProductsController> logger) : base(genericRepository, mediator)
+        ILogger<ProductsController> logger) : base(genericRepository, mediator, maskService)
     {
         _logger = logger;
     }

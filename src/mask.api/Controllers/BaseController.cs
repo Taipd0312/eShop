@@ -1,4 +1,8 @@
-﻿using Mask.Domain.Entities;
+﻿using Mask.Application.Commands;
+using Mask.Application.Infrastrucetures;
+using Mask.Application.Interfaces;
+using Mask.Application.Queries;
+using Mask.Domain.Entities;
 using Mask.Domain.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -13,42 +17,96 @@ namespace Mask.Service.Controllers
         where TForiegnKey : IComparable
     {
         protected readonly IGenericRepository<T, TPramaryKey, TForiegnKey> Repo;
+        protected readonly IMaskService<T, TPramaryKey, TForiegnKey> MaskService;
         protected readonly IMediator _mediator;
 
-        public BaseController(IGenericRepository<T, TPramaryKey, TForiegnKey> genericRepository, IMediator mediator)
+        public BaseController(IGenericRepository<T, TPramaryKey, TForiegnKey> genericRepository, IMediator mediator, IMaskService<T, TPramaryKey, TForiegnKey> maskService)
         {
             Repo = genericRepository;
             _mediator = mediator;
+            MaskService = maskService;
         }
 
         [HttpGet]
-        public IEnumerable<T> Get()
+        public async Task<MaskApplicationResponse<IEnumerable<T>>> Get()
         {
-            return Repo.GetAll();
+            var query = new BaseMaskCoreGetAllEntityQuery<T, TPramaryKey, TForiegnKey>();
+            return await _mediator.Send(query);
         }
 
         [HttpGet("{id}")]
-        public async Task<T?> Get(TPramaryKey id)
+        public async Task<MaskApplicationResponse<T>> Get(TPramaryKey id)
         {
-            return await Repo.GetByIdAsync(id);
+            var query = new BaseMaskCoreGetByIdQuery<T, TPramaryKey, TForiegnKey>();
+            return await _mediator.Send(query);
         }
 
         [HttpPost]
-        public virtual async Task Post([FromBody] T value)
+        public virtual async Task<MaskApplicationResponse<T>> Post([FromBody] T value)
         {
-            await Repo.CreateAsync(value);
+            var command = new BaseMaskCoreCreateEntityCommand<T, TPramaryKey, TForiegnKey>()
+            {
+                Entity = value
+            };
+            
+            return await _mediator.Send(command);
         }
 
         [HttpPut]
-        public async Task Put([FromBody] T value)
+        public async Task<MaskApplicationResponse<T>> Put([FromBody] T value)
         {
-            await Repo.UpdateAsync(value);
+            var command = new BaseMaskCoreUpdateEntityCommand<T, TPramaryKey, TForiegnKey>()
+            {
+                Entity = value
+            };
+
+            return await _mediator.Send(command);
         }
 
         [HttpDelete("id")]
-        public async Task Delete(TPramaryKey id)
+        public async Task<MaskApplicationResponse<TPramaryKey>> Delete(TPramaryKey id)
         {
-            await Repo.DeleteAsync(id);
+            var command = new BaseMaskCoreDeleteEntityByIdCommand<T, TPramaryKey, TForiegnKey>()
+            {
+                Id = id
+            };
+
+            return await _mediator.Send(command);
         }
+    }
+
+    public class BaseMaskCoreGetByIdQuery<T, TPramaryKey, TForiegnKey> : MaskCoreGetEntityByIdQuery<T, TPramaryKey, TForiegnKey>
+        where T : IEntity<TPramaryKey, TForiegnKey>
+        where TPramaryKey : IComparable
+        where TForiegnKey : IComparable
+    {
+    }
+
+    public class BaseMaskCoreCreateEntityCommand<T, TPramaryKey, TForiegnKey> : MaskCoreCreateEntityCommand<T, TPramaryKey, TForiegnKey>
+        where T : IEntity<TPramaryKey, TForiegnKey>
+        where TPramaryKey : IComparable
+        where TForiegnKey : IComparable
+    {
+    }
+
+    public class BaseMaskCoreUpdateEntityCommand<T, TPramaryKey, TForiegnKey> : MaskCoreUpdateEntityCommand<T, TPramaryKey, TForiegnKey>
+        where T : IEntity<TPramaryKey, TForiegnKey>
+        where TPramaryKey : IComparable
+        where TForiegnKey : IComparable
+    {
+    }
+
+    public class BaseMaskCoreDeleteEntityCommand<T, TPramaryKey, TForiegnKey> : MaskCoreDeleteEntityCommand<T, TPramaryKey, TForiegnKey>
+        where T : IEntity<TPramaryKey, TForiegnKey>
+        where TPramaryKey : IComparable
+        where TForiegnKey : IComparable
+    {
+    }
+
+    public class BaseMaskCoreDeleteEntityByIdCommand<T, TPramaryKey, TForiegnKey> : MaskCoreDeleteEntityByIdCommand<T, TPramaryKey, TForiegnKey>
+        where T : IEntity<TPramaryKey, TForiegnKey>
+        where TPramaryKey : IComparable
+        where TForiegnKey : IComparable
+    {
     }
 }

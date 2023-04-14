@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Mask.Application.Services.ProductTypes
 {
-    public class ProductTypeService : MaskService, IProductTypeService
+    public class ProductTypeService : MaskCoreService, IProductTypeService
     {
         private readonly IGenericRepository<ProductType, Guid, string> _productTypeRepository;
 

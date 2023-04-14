@@ -2,7 +2,7 @@
 
 namespace Mask.Application.Interfaces.ProductTypes
 {
-    public interface IProductTypeService : IMaskService
+    public interface IProductTypeService : IMaskCoreService
     {
         public Task<ProductType> CreateProductTypeAsync(ProductType productType);
     }

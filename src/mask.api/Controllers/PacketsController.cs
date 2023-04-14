@@ -1,3 +1,4 @@
+using Mask.Application.Interfaces;
 using Mask.Domain.Entities;
 using Mask.Domain.Interfaces;
 using Mask.Service.Controllers;
@@ -11,8 +12,9 @@ public class PacketsController : BaseController<Packet, Guid, string>
 
     public PacketsController(
         IGenericRepository<Packet, Guid, string> genericRepository, 
+        IMaskService<Packet, Guid, string> maskService, 
         IMediator mediator, 
-        ILogger<PacketsController> logger) : base(genericRepository, mediator)
+        ILogger<PacketsController> logger) : base(genericRepository, mediator, maskService)
     {
         _logger = logger;
     }

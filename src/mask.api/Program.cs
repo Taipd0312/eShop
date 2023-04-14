@@ -2,21 +2,19 @@ using Customer.Infrastructure.Repositories;
 using Mask.api.Exceptions;
 using Mask.Application;
 using Mask.Application.Behaviors;
+using Mask.Application.CQRSs;
 using Mask.Domain.Interfaces;
 using Mask.Infrastructure.DbContexts;
+using Mask.Service.Controllers;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //Add DbContext
 builder.Services.AddDbContext<MaskDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
-
-// Add Meditor
-builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
-builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
 // Add Modules
 builder.Services.RegisterApplicationModule(builder.Configuration);
