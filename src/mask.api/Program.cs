@@ -1,5 +1,7 @@
 using Customer.Infrastructure.Repositories;
 using Mask.api.Exceptions;
+using Mask.api.Middleware;
+using Mask.api.Routing;
 using Mask.Application;
 using Mask.Application.Behaviors;
 using Mask.Domain.Interfaces;
@@ -27,8 +29,10 @@ builder.Services.AddControllers(config =>
     config.RespectBrowserAcceptHeader = true;
 });
 builder.Services.AddTransient(typeof(IGenericRepository<,,>), typeof(GenericRepository<,,>));
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddSingleton<MaskRoutHandlerFilter>();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
@@ -47,6 +51,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMaskMiddleware();
 
 app.UseAuthorization();
 

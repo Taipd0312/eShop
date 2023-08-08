@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageService", "src\ImageService\ImageService.csproj", "{3B4336A0-8A43-4337-986E-92F0B3A244DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{B3E3F1BF-8856-43ED-B902-9300B010F788}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3E3F1BF-8856-43ED-B902-9300B010F788}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3E3F1BF-8856-43ED-B902-9300B010F788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B4336A0-8A43-4337-986E-92F0B3A244DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4336A0-8A43-4337-986E-92F0B3A244DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4336A0-8A43-4337-986E-92F0B3A244DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4336A0-8A43-4337-986E-92F0B3A244DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 		{0FBA9F95-67B0-40AE-B8A8-C566AC527483} = {F4743989-6A02-4CD0-9597-3449E2D5B4E9}
 		{CC0B3863-9D1D-4664-B17D-B28EACF9F5E3} = {F4743989-6A02-4CD0-9597-3449E2D5B4E9}
 		{B3E3F1BF-8856-43ED-B902-9300B010F788} = {F4743989-6A02-4CD0-9597-3449E2D5B4E9}
+		{3B4336A0-8A43-4337-986E-92F0B3A244DA} = {F4743989-6A02-4CD0-9597-3449E2D5B4E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F2DD5D12-A72C-438B-841F-F625044684C5}

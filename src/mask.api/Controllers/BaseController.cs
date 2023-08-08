@@ -22,13 +22,13 @@ namespace Mask.Service.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<T> Get()
+        public virtual IEnumerable<T> Get()
         {
             return Repo.GetAll();
         }
 
         [HttpGet("{id}")]
-        public async Task<T?> Get(TPramaryKey id)
+        public virtual async Task<T?> Get(TPramaryKey id)
         {
             return await Repo.GetByIdAsync(id);
         }
@@ -40,13 +40,13 @@ namespace Mask.Service.Controllers
         }
 
         [HttpPut]
-        public async Task Put([FromBody] T value)
+        public virtual async Task Put([FromBody] T value)
         {
             await Repo.UpdateAsync(value);
         }
 
         [HttpDelete("id")]
-        public async Task Delete(TPramaryKey id)
+        public virtual async Task Delete(TPramaryKey id)
         {
             await Repo.DeleteAsync(id);
         }

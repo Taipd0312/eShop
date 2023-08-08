@@ -9,7 +9,7 @@ namespace Mask.Application.Queries.Products
     {
         public bool BypassCache { get; set; }
 
-        public string CacheKey { get; set; }
+        public string CacheKey { get; set; } = string.Empty;
 
         public TimeSpan? SlidingExpiration { get; set; }
     }

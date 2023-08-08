@@ -1,5 +1,4 @@
-﻿using Mask.Application.CQRSs;
-using MediatR;
+﻿using MediatR;
 
 namespace Mask.Application.Caching
 {
