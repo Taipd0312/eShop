@@ -23,6 +23,7 @@ bld/
 /src/mask.api/Mask.api/obj
 bin/
 obj/
+/src/mask.api/Mask.api/appsettings.Development.json
 
 # Visual Studio 2015 cache/options directory
 .vs/
