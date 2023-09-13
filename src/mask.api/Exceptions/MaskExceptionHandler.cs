@@ -111,7 +111,7 @@ namespace Mask.api.Exceptions
         {
             await context.HttpContext.Response.WriteAsJsonAsync(context.Object, options: new JsonSerializerOptions
             {
-                IgnoreNullValues = true
+                DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
             });
         }
     }

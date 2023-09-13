@@ -1,5 +1,6 @@
 using Customer.Infrastructure.Repositories;
 using Mask.api.Exceptions;
+using Mask.api.Extensions;
 using Mask.api.Middleware;
 using Mask.api.Routing;
 using Mask.Application;
@@ -26,6 +27,7 @@ builder.Services.RegisterApplicationModule(builder.Configuration);
 builder.Services.AddControllers(config =>
 {
     config.Filters.Add<MaskExceptionHandler>();
+    config.Filters.Add<ActionFilterCore>();
     config.RespectBrowserAcceptHeader = true;
 });
 builder.Services.AddTransient(typeof(IGenericRepository<,,>), typeof(GenericRepository<,,>));

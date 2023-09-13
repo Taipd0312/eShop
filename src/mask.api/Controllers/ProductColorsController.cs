@@ -1,3 +1,4 @@
+using FluentValidation;
 using Mask.Domain.Entities;
 using Mask.Domain.Interfaces;
 using Mask.Service.Controllers;
@@ -11,8 +12,9 @@ public class ProductColorsController : BaseController<ProductColor, Guid, string
 
     public ProductColorsController(
         IGenericRepository<ProductColor, Guid, string> genericRepository, 
-        IMediator mediator, 
-        ILogger<ProductColorsController> logger) : base(genericRepository, mediator)
+        IMediator mediator,
+        IValidator<ProductColor> validator,
+        ILogger<ProductColorsController> logger) : base(genericRepository, mediator, validator)
     {
         _logger = logger;
     }

@@ -1,6 +1,11 @@
-﻿using Mask.Domain.Entities;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using Mask.Application.Infrastrucetures;
+using Mask.Application.Validators;
+using Mask.Domain.Entities;
 using Mask.Domain.Interfaces;
 using MediatR;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mask.Service.Controllers
@@ -14,11 +19,13 @@ namespace Mask.Service.Controllers
     {
         protected readonly IGenericRepository<T, TPramaryKey, TForiegnKey> Repo;
         protected readonly IMediator _mediator;
+        protected readonly IValidator<T> _validator;
 
-        public BaseController(IGenericRepository<T, TPramaryKey, TForiegnKey> genericRepository, IMediator mediator)
+        public BaseController(IGenericRepository<T, TPramaryKey, TForiegnKey> genericRepository, IMediator mediator, IValidator<T> validator)
         {
             Repo = genericRepository;
             _mediator = mediator;
+            _validator = validator;
         }
 
         [HttpGet]
@@ -34,9 +41,13 @@ namespace Mask.Service.Controllers
         }
 
         [HttpPost]
-        public virtual async Task Post([FromBody] T value)
+        public virtual async Task<Results<MaskResult<T>, MaskValidationResponse<T>>> Post([FromBody] T value)
         {
+            var validator = await _validator.ValidateAsync(value);
             await Repo.CreateAsync(value);
+            await Repo.SaveChangesAsync();
+
+            return new MaskResult<T>(value);
         }
 
         [HttpPut]

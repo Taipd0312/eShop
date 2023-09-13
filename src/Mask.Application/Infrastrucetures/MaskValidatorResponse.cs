@@ -17,8 +17,6 @@ namespace Mask.Application.Infrastrucetures
         {
         }
 
-
-
         public int Code { get; set; }
 
         public MaskActionResponse Action { get; set; }

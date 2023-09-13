@@ -29,7 +29,7 @@ namespace ImageService.Services
             {
                 var uploadParams = new ImageUploadParams
                 {
-                    File = new FileDescription("FileName", stream),
+                    File = new FileDescription(DateTime.UtcNow.ToString("yyyyyMMddhhmmss"), stream),
                     Transformation = new Transformation().Height(500).Width(500).Crop("fill").Gravity("face")
                 };
 

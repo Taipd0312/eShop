@@ -1,4 +1,7 @@
-﻿namespace Mask.Domain.Entities
+﻿using FluentValidation;
+using FluentValidation.Results;
+
+namespace Mask.Domain.Entities
 {
     public abstract class BaseEntity : AudiedEntity<Guid, string>
     {
@@ -28,5 +31,10 @@
         public DateTime ModifiedOn { get; set; }
 
         public TForeignKey ModifiedBy { get; set; }
+
+        public ValidationResult Validate<IEntity>(IEntity instance)
+        {
+            
+        }
     }
 }

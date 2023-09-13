@@ -1,3 +1,4 @@
+using FluentValidation;
 using Mask.Domain.Entities;
 using Mask.Domain.Interfaces;
 using Mask.Service.Controllers;
@@ -12,7 +13,8 @@ public class PacketCheckListsController : BaseController<PacketCheckList, Guid, 
     public PacketCheckListsController(
         IGenericRepository<PacketCheckList, Guid, string> genericRepository, 
         IMediator mediator, 
-        ILogger<PacketCheckListsController> logger) : base(genericRepository, mediator)
+        IValidator<PacketCheckList> validator,
+        ILogger<PacketCheckListsController> logger) : base(genericRepository, mediator, validator)
     {
         _logger = logger;
     }

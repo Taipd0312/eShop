@@ -1,3 +1,4 @@
+using FluentValidation;
 using Mask.Domain.Entities;
 using Mask.Domain.Interfaces;
 using Mask.Service.Controllers;
@@ -12,7 +13,8 @@ public class PacketsController : BaseController<Packet, Guid, string>
     public PacketsController(
         IGenericRepository<Packet, Guid, string> genericRepository, 
         IMediator mediator, 
-        ILogger<PacketsController> logger) : base(genericRepository, mediator)
+        IValidator<Packet> validator,
+        ILogger<PacketsController> logger) : base(genericRepository, mediator, validator)
     {
         _logger = logger;
     }

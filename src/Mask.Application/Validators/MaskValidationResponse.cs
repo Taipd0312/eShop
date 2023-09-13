@@ -1,9 +1,22 @@
-﻿namespace Mask.Application.Validators
-{
-    public class MaskValidationResponse
-    {
-        public int Code { get; set; }
+﻿using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
-        public int MyProperty { get; set; }
+namespace Mask.Application.Validators
+{
+    public class MaskValidationResponse<TValidatorResult> : IResult
+    {
+        private readonly TValidatorResult _result;
+
+        public MaskValidationResponse(TValidatorResult result)
+        {
+            _result = result;
+        }
+
+        public async Task ExecuteAsync(HttpContext httpContext)
+        {
+            httpContext.Response.ContentType = "application/json";
+            httpContext.Response.ContentLength = 0;
+            await httpContext.Response.WriteAsync(JsonConvert.SerializeObject(_result));
+        }
     }
 }
