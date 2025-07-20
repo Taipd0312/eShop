@@ -8,7 +8,7 @@ namespace Mask.Infrastructure.DbContexts
 {
     public class MaskDbContext : BaseDbContextOptions<MaskDbContext>
     {
-        public MaskDbContext(DbContextOptions options) : base(options)
+        public MaskDbContext(DbContextOptions<BaseDbContextOptions<MaskDbContext>> options) : base(options)
         {
         }
 
@@ -16,7 +16,7 @@ namespace Mask.Infrastructure.DbContexts
         {
             public MaskDbContext CreateDbContext(string[] args)
             {
-                var optionsBuilder = new DbContextOptionsBuilder<MaskDbContext>();
+                var optionsBuilder = new DbContextOptionsBuilder<BaseDbContextOptions<MaskDbContext>>();
                 optionsBuilder.UseSqlServer("Server=myServerName,myPortNumber;Database=myDataBase;User Id=myUsername;Password=myPassword;");
 
                 return new MaskDbContext(optionsBuilder.Options);

@@ -7,7 +7,7 @@ namespace Mask.Infrastructure.DbContexts
 {
     public abstract class BaseDbContextOptions<TContext> : DbContext where TContext : BaseDbContextOptions<TContext>
     {
-        public BaseDbContextOptions(DbContextOptions options) : base(options)
+        public BaseDbContextOptions(DbContextOptions<BaseDbContextOptions<TContext>> options) : base(options)
         {
         }
 

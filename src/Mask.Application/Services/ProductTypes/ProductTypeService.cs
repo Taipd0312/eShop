@@ -27,7 +27,7 @@ namespace Mask.Application.Services.ProductTypes
             }
 
             await _productTypeRepository.CreateAsync(productType);
-            UOW.Commit();
+            await UOW.SaveChangesAsync();
 
             return productType;
         }
